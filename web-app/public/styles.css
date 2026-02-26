@@ -1,0 +1,108 @@
+/* Base / Global */
+* { box-sizing: border-box; }
+
+body {
+  background: #d6d6d6;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Shared Components */
+.row { margin-bottom: 10px; }
+.center { text-align: center; }
+
+button {
+  padding: 4px 10px;
+  border: 1px solid #666;
+  background: #e0e0e0;
+  cursor: pointer;
+}
+button:hover { background: #d0d0d0; }
+
+label { display: block; margin-bottom: 4px; }
+input { width: 100%; padding: 4px; border: 1px solid #888; background: #fff; }
+h2 { margin: 0 0 15px 0; padding: 8px; background: #efefef; border: 1px solid #ccc; font-size: 14px; }
+
+label:has(+ input[required])::after {
+  content: " *";
+  color: #cc0000;
+}
+
+/* Login Page */
+.login-box {
+  width: 340px;
+  margin: 120px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+/* Dashboard */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #efefef;
+  border-bottom: 1px solid #999;
+  padding: 8px 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.panel-user { font-weight: normal; font-size: 13px; }
+.panel-user a { text-decoration: none; color: #00e; margin-left: 4px; }
+.panel-user a:hover { text-decoration: underline; }
+
+.create-client-row { margin-top: 10px; }
+
+/* Clients Table */
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.clients-table th,
+.clients-table td {
+  border: 1px solid #999;
+  padding: 6px;
+  text-align: left;
+  font-size: 13px;
+}
+.clients-table th { background: #efefef; }
+.clients-table td a { text-decoration: none; color: #00e; }
+.clients-table td a:hover { text-decoration: underline; }
+
+/* Form Container */
+.form-box {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #999;
+}
+
+/* Checkbox Row */
+.checkbox-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Danger Options */
+.danger-box {
+  margin-top: 20px;
+  border: 1px solid #cc0000;
+  background: #fff5f5;
+}
+
+.danger-button {
+  border: 1px solid #990000;
+  background: #cc0000;
+  color: white;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.danger-button:hover {
+  background: #aa0000;
+}

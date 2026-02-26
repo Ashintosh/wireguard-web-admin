@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#MISE description="Run web-app with wg-admin helper"
+
+set -euo pipefail
+
+OUT="dist"
+
+mkdir -p "$OUT"
+rm -rf "$OUT"/*
+
+# --- Build wg-admin ---
+echo "wg-admin: Building binary..."
+cargo build -p wg-admin
+cp target/debug/wg-admin "$OUT"/
+echo "wg-admin: Build done!"
+
+# --- Build web-app ---
+echo "web-app: Building binary..."
+cargo build -p web-app
+cp target/debug/web-app "$OUT"/
+# cp -r web-app/templates "$OUT"/
+# cp -r web-app/static "$OUT"/
+echo "web-app: Buld done!"
+
+echo "Dist folder ready at $OUT"
+
+# --- Run web-app directly from dist ---
+echo "Running web-app from dist..."
+./"$OUT"/web-app

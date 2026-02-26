@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#MISE description="Run tests for web-app"
+
+set -euo pipefail
+
+echo "web-app: Running tests..."
+cargo test -p web-app
+echo "web-app: Tests complete!"

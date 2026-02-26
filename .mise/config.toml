@@ -1,0 +1,28 @@
+[tools]
+rust = "stable"
+
+# -------- workspace --------
+
+[tasks.build]
+description = "Build wg-admin and web-app (release) and package files into dist/"
+run = "tasks/build"
+
+[tasks.dev]
+description = "Build wg-admin and web-app (debug), stage into dist/, then run web-app"
+run = "tasks/dev"
+
+[tasks.test]
+description = "Run tests for wg-admin and web-app"
+run = "tasks/test"
+
+# -------- web-app --------
+
+[tasks."web:test"]
+description = "Run web-app tests"
+run = "tasks/web-app/test"
+
+# -------- wg-admin --------
+
+[tasks."admin:test"]
+description = "Run wg-admin tests"
+run = "tasks/wg-admin/tests"

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#MISE description="Run tests for wg-admin"
+
+set -euo pipefail
+
+echo "wg-admin: Running tests..."
+cargo test -p wg-admin
+echo "wg-admin: Tests complete!"

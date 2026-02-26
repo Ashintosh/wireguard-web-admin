@@ -1,0 +1,47 @@
+{% extends "layouts/base.html" %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block content %}
+{% include "partials/panel_header.html" %}
+<div class="row center create-client-row">
+  <a href="/client/create"><button>Create New Client</button></a>
+</div>
+<table class="clients-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>IP Address</th>
+      <th>Allowed IPs</th>
+      <th>Public Key</th>
+      <th>Config</th>
+      <th>Endpoint</th>
+      <th>Last Seen</th>
+      <th>Bytes Sent / Received</th>
+      <th>Status</th>
+      <th>Creation Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for client in clients %}
+    <tr>
+      <td>{{ client.name }}</td>
+      <td>{{ client.description }}</td>
+      <td>{{ client.ip_address }}</td>
+      <td>{{ client.allowed_ips }}</td>
+      <td>{{ client.public_key }}</td>
+      <td><a href="/download/{{ client.name }}.conf">Download</a></td>
+      <td>{{ client.endpoint }}</td>
+      <td>{{ client.last_seen }}</td>
+      <td>{{ client.bytes_sent }} / {{ client.bytes_received }}</td>
+      <td>{{ client.status }}</td>
+      <td>{{ client.creation_date }}</td>
+      <td>
+        <a href="/edit/{{ client.name }}">Edit</a> |
+        <a href="/disable/{{ client.name }}">Disable</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

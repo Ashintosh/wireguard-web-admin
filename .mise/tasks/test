@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#MISE description="Run tests for all projects in the workspace"
+
+set -euo pipefail
+
+echo "wg-admin: Running tests..."
+cargo test -p wg-admin
+echo "wg-admin: Tests complete!"
+
+echo "web-app: Running tests..."
+cargo test -p web-app
+echo "web-app: Tests complete!"

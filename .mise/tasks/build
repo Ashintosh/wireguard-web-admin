@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#MISE description="Build web-app with wg-admin helper for release"
+
+set -euo pipefail
+
+OUT="dist"
+
+mkdir -p "$OUT"
+rm -rf "$OUT"/*
+
+# --- Build wg-admin ---
+echo "wg-admin: Building binary..."
+cargo build -p wg-admin --release
+cp target/release/wg-admin "$OUT"/
+echo "wg-admin: Build done!"
+
+# --- Build web-app ---
+echo "web-app: Building binary..."
+cargo build -p web-app --release
+cp target/release/web-app "$OUT"/
+# cp -r web-app/templates "$OUT"/
+# cp -r web-app/static "$OUT"/
+echo "web-app: Buld done!"

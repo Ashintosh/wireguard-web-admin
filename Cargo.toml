@@ -1,0 +1,8 @@
+[workspace]
+members = ["web-app", "wg-admin"]
+default-members = ["web-app"]
+resolver = "3"
+
+[workspace.package]
+authors = ["Ashintosh <ash@ashinto.sh>"]
+license = "MIT"

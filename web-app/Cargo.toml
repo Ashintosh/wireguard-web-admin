@@ -1,0 +1,13 @@
+[package]
+name = "web-app"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.93.0"
+
+[dependencies]
+argon2 = "0.5.3"
+askama = "0.15.4"
+axum = "0.8.8"
+rusqlite = "0.38.0"
+tokio = { version = "1.49.0", features = ["rt-multi-thread"] }
+tower-http = { version = "0.6.8", features = ["fs"] }
