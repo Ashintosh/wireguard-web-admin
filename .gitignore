@@ -2,3 +2,5 @@
 .vscode/
 target/
 dist/
+*.sqlite
+*.db
